@@ -29,7 +29,8 @@ try:
         if "amazon" in url:
             title = driver.find_element(By.ID,"productTitle").text
             price = driver.find_element(By.CLASS_NAME,"a-price-whole").text
-            rating = driver.find_element(By.CLASS_NAME,"a-color-base").text
+            rating = driver.find_element(By.XPATH,'//*[@id="acrPopover"]/span[1]/a/span').text
+            print("Rating",rating)
             reviews = driver.find_element(By.ID,"acrCustomerReviewText").text
             products_data.append({
                 "site": "Amazon",
